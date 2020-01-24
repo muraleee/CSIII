@@ -2,12 +2,16 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import urllib
+from scrapy.http import TextResponse
 
 
 def run():
-    r = requests.get("https://en.wikipedia.org/wiki/Quantum_mechanics")
-    r.raise_for_status()
-    soup = BeautifulSoup(r.text, 'html.parser')
+    response = requests.get("https://en.wikipedia.org/wiki/Quantum_mechanics")
+    response.raise_for_status()
+    response = TextResponse(body=response.content, url="https://en.wikipedia.org/wiki/Quantum_mechanics")
+
+    response.css('div.printfooter > a::text').extract_first()
+    soup = BeautifulSoup(response.text, 'html.parser')
 
     a_tags= soup.findAll('a')
     s= []
