@@ -1,23 +1,24 @@
 import requests
+from io import open as iopen
 
 
-pic_url= "https://upload.wikimedia.org/wikipedia/commons/3/32/Relstandard.gif"
-with open('pic1.jpg', 'wb') as handle:
-        response = requests.get(pic_url, stream=True)
-        print("attempting download...")
-        if not response.ok:
-            print(response)
+pic_url= "https://images.craigslist.org/00707_hkZFU3Kj0gX_600x450.jpg"
 
-        for block in response.iter_content(1024):
-            if not block:
-                break
+with open('pic5.jpg', 'wb') as handle:
+    r = requests.get(pic_url, stream=True)
+    print("attempting download...")
+    if not r.ok:
+        print(r)
 
-            handle.write(block)
+    for block in r.iter_content(1024):
+        if not block:
+            break
+
+        handle.write(block)
 print(handle)
 
 '''
-import requests
-from io import open as iopen
+
  
 def fetch_image(img_ur, save_filename):
     img = requests.get(img_ur)
@@ -27,8 +28,8 @@ def fetch_image(img_ur, save_filename):
     else:
         print('Received error: {}'.format(img.status_code))
  
-testlink = 'https://vignette.wikia.nocookie.net/pdsh/images/9/95/Prettygoldilocks.jpg'
+testlink = 'https://commons.wikimedia.org/wiki/File:Relstandard.gif'
  
-filename = 'Goldilocks.jpg'
+filename = 'Goldilocks3.jpg'
 fetch_image(testlink, filename)
 '''
