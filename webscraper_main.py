@@ -9,12 +9,18 @@ def run():
     url = "https://sfbay.craigslist.org/search/sfc/apa"
 
     housing_urls= []
-     
+    sqft_urls= [] 
+    section_ranked=[]
+    ranked = []
     #goes through 24 pages of craigslist  
     for i in range(24):
         if i == 0:
             housing_urls=souper(url)
-            sqft_search(housing_urls)
+            sqft_urls=sqft_search(housing_urls)
+            section_ranked= rank_sqft(sqft_urls)
+            for j in range(len(section_ranked)) :
+                ranked.append(section_ranked[j])
+
             
 
 #supposed to get all of the links from each page
@@ -54,20 +60,33 @@ def souper(url):
     '''
     return housing_urls
 
-#supposed to find the features of the page of apartments and return a ranking
+#supposed to find the features of the page of apartments and return a ranking, takes a while for it run
 def sqft_search(housing_urls):
     housing_urls = housing_urls
-    for i in range(len(housing_urls)):
-        if i == 1: 
+   #list of sqft and corresponding urls
+    sqft_urls =[]
+    for i in range(len(housing_urls)): 
           r= requests.get(housing_urls[i]) 
           soup= BeautifulSoup(r.text, 'html.parser')
 
           spans= soup.findAll('span',{'class':'housing'})
-          if re.search('.+(.+)ft.+',spans[0].text):
-            #ERROR
-            print(re.findall('.+(.+)ft.+',spans[0].text))
-          else:
-             print(spans[0].text)
-          
-    return 0
+          if len(spans) != 0:
+            if re.search('.+\-(.+)ft.+',spans[0].text):
+              sqfts= re.findall('.+\- (.+)ft.+',spans[0].text)
+              sqft_urls.append([int(sqfts[0]), housing_urls[i]])
+              print("done")
+            else:
+               housing_urls[i]= "error"
+            spans.clear() 
+
+                     
+    return sqft_urls
+
+def rank_sqft(sqft_urls):
+ 
+  sqft_urls.sort() 
+  sqft_urls.reverse()      
+  print(sqft_urls[0][0])
+  return 0
 run()
+
