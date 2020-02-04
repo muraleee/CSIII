@@ -12,6 +12,8 @@ def run():
     sqft_urls= [] 
     section_ranked=[]
     ranked = []
+    final_ranks=[]
+    apts= []
     #goes through 24 pages of craigslist  
     for i in range(24):
         if i == 0:
@@ -21,7 +23,24 @@ def run():
             for j in range(len(section_ranked)) :
                 ranked.append(section_ranked[j])
 
-            
+    #this invocation of the method orders all of the apartments by sqft
+    final_ranks=rank_sqft(section_ranked)   
+
+    #info of sqft apartments w/o pictures
+    apts=info_of_apts(final_ranks)
+    
+    #printed out info
+    for i in range(len(apts)):
+        print(str(i+1)+".")
+        print("title:  "+ apts[i][1])
+        print("sqft: " + str(apts[i][3]))
+        print("price:  "+apts[i][0])
+        print("location:  "+ apts[i][2])
+        print("\n")
+
+
+
+    # with pictures     
 
 #supposed to get all of the links from each page
 def souper(url):
@@ -74,7 +93,7 @@ def sqft_search(housing_urls):
             if re.search('.+\-(.+)ft.+',spans[0].text):
               sqfts= re.findall('.+\- (.+)ft.+',spans[0].text)
               sqft_urls.append([int(sqfts[0]), housing_urls[i]])
-              print("done")
+              #print("done")
             else:
                housing_urls[i]= "error"
             spans.clear() 
@@ -86,7 +105,37 @@ def rank_sqft(sqft_urls):
  
   sqft_urls.sort() 
   sqft_urls.reverse()      
-  print(sqft_urls[0][0])
-  return 0
+  #print(sqft_urls[0][0])
+  ranks= sqft_urls
+  
+  return ranks
+
+#include the pictures later
+def info_of_apts(final_ranks):
+  apts_5= []
+  price= ""
+  title= ""
+  location= ""
+  sqft=""
+  for i in range(len(final_ranks)):
+     if i < 5:
+       r= requests.get(final_ranks[i][1])
+       soup = BeautifulSoup(r.text, 'html.parser')
+       spans_price= soup.findAll('span',{'class':'price'})
+       spans_title= soup.findAll('span',{'id':'titletextonly'})
+       spans_location= soup.findAll('small')
+       if len(spans_price) != 0:
+        price=str(spans_price[0].text)
+       if len(spans_price) != 0:
+        title=str(spans_title[0].text)
+       if len(spans_location) != 0:
+        location=str(spans_location[0].text)
+       sqft= final_ranks[i][0]
+       apts_5.append([price,title,location,sqft])
+
+      
+  return apts_5
+    
+
 run()
 
