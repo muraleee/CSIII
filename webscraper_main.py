@@ -93,7 +93,7 @@ def sqft_search(housing_urls):
             if re.search('.+\-(.+)ft.+',spans[0].text):
               sqfts= re.findall('.+\- (.+)ft.+',spans[0].text)
               sqft_urls.append([int(sqfts[0]), housing_urls[i]])
-              #print("done")
+              print("done")
             else:
                housing_urls[i]= "error"
             spans.clear() 
@@ -101,11 +101,14 @@ def sqft_search(housing_urls):
                      
     return sqft_urls
 
+#in this method a page's apartments are ordered by sqft and repeated listings are removed
 def rank_sqft(sqft_urls):
  
   sqft_urls.sort() 
   sqft_urls.reverse()      
   #print(sqft_urls[0][0])
+  sqft_urls = repeat_check(sqft_urls)
+
   ranks= sqft_urls
   
   return ranks
@@ -137,5 +140,27 @@ def info_of_apts(final_ranks):
   return apts_5
     
 
+def repeat_check(sqft_urls):
+     no_repeats = sqft_urls
+     url_string= ""
+     removing= []
+     for i in range(len(sqft_urls)-1):
+        j=i+1
+        url_string= sqft_urls[i][1]
+        url_st= sqft_urls[j][1]
+        #re.search('.+\/d/(.+)\/.+',url_string)
+        lists= re.findall('.+\/d/(.+)\/.+',url_string)
+        temp= re.findall('.+\/d/(.+)\/.+',url_st)
+        if lists[0] == temp[0]:
+           #print("check")
+           removing.append([sqft_urls[j][0],sqft_urls[j][1]])
+
+     #doesn't work
+     for counter in range(len(removing)):
+        no_repeats.remove(removing[counter])
+
+
+     
+     return no_repeats
 run()
 
