@@ -11,6 +11,7 @@ sqft_urls.append("https://sfbay.craigslist.org/sfc/apa/d/oakland-house-for-rent/
 no_repeats = sqft_urls
 url_string= ""
 removing= []
+'''
 for i in range(len(sqft_urls)-1):
         j=i+1
         url_string= sqft_urls[i]
@@ -24,5 +25,16 @@ for i in range(len(sqft_urls)-1):
 
 for counter in range(len(removing)):
     no_repeats.remove(removing[counter])
+'''
+url= "https://sfbay.craigslist.org/search/sfc/apa"
 
-print(no_repeats)
+def next_page(url):
+    r= requests.get(url)
+    new_url= ""
+    soup = BeautifulSoup(r.text, 'html.parser')
+    a_tags= soup.findAll('a',{'class':'button next'})
+    for tag in a_tags:
+        new_url = tag.get('href', None)
+    return "https://sfbay.craigslist.org"+ new_url
+
+

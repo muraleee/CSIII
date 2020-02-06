@@ -4,30 +4,40 @@ import re
 import urllib
 from scrapy.http import TextResponse
 
-
+#Right now one page takes 31 seconds to load
 def run():
     url = "https://sfbay.craigslist.org/search/sfc/apa"
 
     housing_urls= []
     sqft_urls= [] 
     section_ranked=[]
+    #all of the apts
     ranked = []
     final_ranks=[]
     apts= []
     #goes through 24 pages of craigslist  
     for i in range(24):
-        if i == 0:
+          if i==0:
             housing_urls=souper(url)
             sqft_urls=sqft_search(housing_urls)
             section_ranked= rank_sqft(sqft_urls)
             for j in range(len(section_ranked)) :
                 ranked.append(section_ranked[j])
+            
+            '''
+            if i < 23:
+              url= next_page(url)
+       # if i==1:
+           #housing_urls=souper(url)
+           '''
 
     #this invocation of the method orders all of the apartments by sqft
-    final_ranks=rank_sqft(section_ranked)   
+    final_ranks=rank_sqft(ranked)   
 
     #info of sqft apartments w/o pictures
-    apts=info_of_apts(final_ranks)
+    apts, pic_urls=info_of_apts(final_ranks)
+
+    #pictures 
     
     #printed out info
     for i in range(len(apts)):
@@ -120,6 +130,7 @@ def info_of_apts(final_ranks):
   title= ""
   location= ""
   sqft=""
+  pic_urls=[]
   for i in range(len(final_ranks)):
      if i < 5:
        r= requests.get(final_ranks[i][1])
@@ -135,9 +146,10 @@ def info_of_apts(final_ranks):
         location=str(spans_location[0].text)
        sqft= final_ranks[i][0]
        apts_5.append([price,title,location,sqft])
+       pic_urls.append(final_ranks[i][1])
 
       
-  return apts_5
+  return apts_5, pic_urls
     
 
 def repeat_check(sqft_urls):
@@ -155,12 +167,28 @@ def repeat_check(sqft_urls):
            #print("check")
            removing.append([sqft_urls[j][0],sqft_urls[j][1]])
 
-     #doesn't work
      for counter in range(len(removing)):
         no_repeats.remove(removing[counter])
 
 
      
      return no_repeats
+
+def next_page(url):
+    r= requests.get(url)
+    new_url= ""
+    soup = BeautifulSoup(r.text, 'html.parser')
+    a_tags= soup.findAll('a',{'class':'button next'})
+    for tag in a_tags:
+        new_url = tag.get('href', None)
+    
+    
+    return "https://sfbay.craigslist.org"+ new_url
+
+
+
+#method is supposed to download pictures
+def pic_return(pic_urls):
+     return 0
 run()
 
