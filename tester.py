@@ -26,15 +26,39 @@ for i in range(len(sqft_urls)-1):
 for counter in range(len(removing)):
     no_repeats.remove(removing[counter])
 '''
-url= "https://sfbay.craigslist.org/search/sfc/apa"
+picture_urls= []
+url= "https://sfbay.craigslist.org/sfc/apa/d/san-francisco-studio-for-rent-on-cuvier/7072501937.html"
 
-def next_page(url):
-    r= requests.get(url)
-    new_url= ""
-    soup = BeautifulSoup(r.text, 'html.parser')
-    a_tags= soup.findAll('a',{'class':'button next'})
-    for tag in a_tags:
-        new_url = tag.get('href', None)
-    return "https://sfbay.craigslist.org"+ new_url
+r1= requests.get(url)
+
+soup = BeautifulSoup(r1.text, 'html.parser')
+
+div_tags= soup.findAll('div',{'id':'thumbs'})
+
+pic_urls= []
+z=0
+for i in range(len(div_tags)):
+      for tag in div_tags[i].find_all('a'):
+       if z < 2: 
+         pic_urls.append(tag.get('href',None))
+       z+=1
+
+picture_urls.append(pic_urls)
+print(picture_urls[0])
+'''
+with open('apt_'+str(j)+'pic.jpg', 'wb') as handle:
+    r = requests.get(pic_urls[j], stream=True)
+    print("attempting download...")
+    if not r.ok:
+        print(r)
+
+    for block in r.iter_content(1024):
+        if not block:
+            break
+
+        handle.write(block)
+'''
+
+
 
 

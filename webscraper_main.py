@@ -40,13 +40,15 @@ def run():
     #pictures 
     
     #printed out info
+
+    storage_file = open("apt_info.txt", "w")
     for i in range(len(apts)):
-        print(str(i+1)+".")
-        print("title:  "+ apts[i][1])
-        print("sqft: " + str(apts[i][3]))
-        print("price:  "+apts[i][0])
-        print("location:  "+ apts[i][2])
-        print("\n")
+        storage_file.write(str(i+1)+". ")
+        storage_file.write("title:  "+ apts[i][1])
+        storage_file.write("\n")
+        storage_file.write("sqft: " + str(apts[i][3]))
+        storage_file.write(" price:  "+apts[i][0])
+        storage_file.write(" location:  "+ apts[i][2])
 
 
 
