@@ -26,39 +26,25 @@ for i in range(len(sqft_urls)-1):
 for counter in range(len(removing)):
     no_repeats.remove(removing[counter])
 '''
-picture_urls= []
-url= "https://sfbay.craigslist.org/sfc/apa/d/san-francisco-studio-for-rent-on-cuvier/7072501937.html"
+urls= ["https://sfbay.craigslist.org/sfc/apa/d/pleasanton-fabulous-3-bed2bath/7073151657.html", "https://sfbay.craigslist.org/sfc/apa/d/san-francisco-beautiful-new-remodeling/7073146920.html"]
 
-r1= requests.get(url)
+#this method should give 2 pic_urls to later be downloaded
+def pic_return(urls):
+      
+    
+     r= requests.get(urls[0])
+     #is the literal picture urls, supposed to have 2 of them 
+     pic_urls=[]
+     soup = BeautifulSoup(r.text, 'html.parser')
+     div_tags= soup.findAll('div',{'id':'thumbs'})
+     s=0
+     for i in range(len(div_tags)):
+       for tag in div_tags[i].find_all('a'):
+            if s < 2:
+             pic_urls.append(tag.get('href',None))
+            s+=1
+            
+     print(pic_urls)
+     return 0
 
-soup = BeautifulSoup(r1.text, 'html.parser')
-
-div_tags= soup.findAll('div',{'id':'thumbs'})
-
-pic_urls= []
-z=0
-for i in range(len(div_tags)):
-      for tag in div_tags[i].find_all('a'):
-       if z < 2: 
-         pic_urls.append(tag.get('href',None))
-       z+=1
-
-picture_urls.append(pic_urls)
-print(picture_urls[0])
-'''
-with open('apt_'+str(j)+'pic.jpg', 'wb') as handle:
-    r = requests.get(pic_urls[j], stream=True)
-    print("attempting download...")
-    if not r.ok:
-        print(r)
-
-    for block in r.iter_content(1024):
-        if not block:
-            break
-
-        handle.write(block)
-'''
-
-
-
-
+pic_return(urls)

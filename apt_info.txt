@@ -1,6 +1,15 @@
-1. title:  Fabulous Grand Residence w/Big VIEWS @ Millennium Tower
-sqft: 3315 price:  $18000 location:   (SOMA / south beach)2. title:  lovely sunny home in Mission/Bernal Heights
-sqft: 2000 price:  $6200 location:   (bernal heights)3. title:  Location exceptionally quiet
-sqft: 2000 price:  $4200 location:   (marina / cow hollow)4. title:  $2275 Unique Exclusive Pent House  SPACIOUS BED room and Deck View
-sqft: 2000 price:  $2275 location:   (excelsior / outer mission)5. title:  PAC HEIGHTS | 3BR/2BA Home with GG Bridge Views | Skybox Realty
-sqft: 1974 price:  $7850 location:   (SOMA / south beach)
+
+1. title:  Awesome Location, Spacious, Remod. 4-mon rental. Striking Views of SF!
+sqft: 2800 price:  $6995 location:   (noe valley)
+
+2. title:  Highly desirable prime West Menlo Park location.
+sqft: 2620 price:  $1150 location:   (1260 Hermosa Way, Menlo Park, CA 94025)
+
+3. title:  Elegant detached spacious 3bed/1.5 bath + bonus rooms home
+sqft: 2610 price:  $6500 location:   (west portal / forest hill)
+
+4. title:  Extra Large Rooms, Spacious Living Room, Laundry & Parking
+sqft: 2200 price:  $5350 location:   (inner sunset / UCSF)
+
+5. title:  Peaceful 3bd/2.5ba Remodelled Townhouse in Private Community
+sqft: 2062 price:  $5100 location:   (ingleside / SFSU / CCSF)

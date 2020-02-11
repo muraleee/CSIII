@@ -17,42 +17,50 @@ def run():
     apts= []
     #goes through 24 pages of craigslist  
     for i in range(24):
-          if i==0:
-            housing_urls=souper(url)
-            sqft_urls=sqft_search(housing_urls)
-            section_ranked= rank_sqft(sqft_urls)
-            for j in range(len(section_ranked)) :
-                ranked.append(section_ranked[j])
+         
+          housing_urls=souper(url)
+          sqft_urls=sqft_search(housing_urls)
+          section_ranked= rank_sqft(sqft_urls)
+          for j in range(len(section_ranked)):
+             ranked.append(section_ranked[j])
             
-            '''
-            if i < 23:
+ 
+          if i < 2:
               url= next_page(url)
-       # if i==1:
-           #housing_urls=souper(url)
-           '''
+          else: 
+             break
+ 
 
     #this invocation of the method orders all of the apartments by sqft
     final_ranks=rank_sqft(ranked)   
 
-    #info of sqft apartments w/o pictures
-    apts, pic_urls=info_of_apts(final_ranks)
+    #info of sqft apartments w/o pictures and urls 
+    apts, urls=info_of_apts(final_ranks)
 
     #pictures 
     
     #printed out info
 
-    storage_file = open("apt_info.txt", "w")
+    storage_file = open("apt_info.txt", "r+")
     for i in range(len(apts)):
+        storage_file.write("\n")
         storage_file.write(str(i+1)+". ")
         storage_file.write("title:  "+ apts[i][1])
         storage_file.write("\n")
         storage_file.write("sqft: " + str(apts[i][3]))
         storage_file.write(" price:  "+apts[i][0])
         storage_file.write(" location:  "+ apts[i][2])
+        #can add url of the apt
+        #storage.file() ...
+        storage_file.write("\n")
 
 
 
-    # with pictures     
+
+    # with pictures
+
+         
+
 
 #supposed to get all of the links from each page
 def souper(url):
@@ -70,25 +78,6 @@ def souper(url):
              housing_urls.append(tag.get('href',None))
            s+=1       
     
-    #need to find a way to isolate the link
-
-    #print(li_tags[0])
-    '''
-    for child in ul_tags[0].children:
-        if z==0:
-          print(child)
-          #s=re.findall('<a.+', child)
-    '''    
-        
-           
-
-    '''
-    for index in range(len(ul_tags)): 
-        for child in ul_tags[index].children:
-            if z== 0:
-              print(child)
-            z+=1
-    '''
     return housing_urls
 
 #supposed to find the features of the page of apartments and return a ranking, takes a while for it run
@@ -190,7 +179,7 @@ def next_page(url):
 
 
 #method is supposed to download pictures
-def pic_return(pic_urls):
+def pic_return(urls):
      return 0
 run()
 
