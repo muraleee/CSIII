@@ -1,15 +1,19 @@
 
-1. title:  Awesome Location, Spacious, Remod. 4-mon rental. Striking Views of SF!
-sqft: 2800 price:  $6995 location:   (noe valley)
+1. title:  b'Price drop\xef\xbc\x81Rooms to roam with 2 car garage parking'
+pots
+sqft: 3000 price:  $6600 location:   (richmond / seacliff)
 
-2. title:  Highly desirable prime West Menlo Park location.
-sqft: 2620 price:  $1150 location:   (1260 Hermosa Way, Menlo Park, CA 94025)
+2. title:  Gracious Living..
+sqft: 2195 price:  $4500 location:   (San Francisco)
 
-3. title:  Elegant detached spacious 3bed/1.5 bath + bonus rooms home
-sqft: 2610 price:  $6500 location:   (west portal / forest hill)
+3. title:  St Regis three bedroom, three bathroom condo
+sqft: 2025 price:  $16500 location:   (SOMA / south beach)
 
-4. title:  Extra Large Rooms, Spacious Living Room, Laundry & Parking
-sqft: 2200 price:  $5350 location:   (inner sunset / UCSF)
+4. title:  Classic Unit
+sqft: 1834 price:  $3500 location:   (Venice)
+
+5. title:  Bike Friendly, Business Lounge, Outdoor Pool
+sqft: 1442 price:  $6500 location:   (downtown / civic / van ness)
 
 5. title:  Peaceful 3bd/2.5ba Remodelled Townhouse in Private Community
 sqft: 2062 price:  $5100 location:   (ingleside / SFSU / CCSF)
