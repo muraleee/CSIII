@@ -1,19 +1,15 @@
 
-1. title:  b'Price drop\xef\xbc\x81Rooms to roam with 2 car garage parking'
-pots
-sqft: 3000 price:  $6600 location:   (richmond / seacliff)
+1. title:  2 Bedroom Condo at The Fairmont Ghirardelli Square
+sqft: 94109 price:  $5000 location:   (russian hill) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-2-bedroom-condo-at-the/7074265820.html
 
-2. title:  Gracious Living..
-sqft: 2195 price:  $4500 location:   (San Francisco)
+2. title:  One Bedroom and One bathroom in High Rise Bldg
+sqft: 21000 price:  $1950 location:   (sunset / parkside) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-one-bedroom-and-one/7070538450.html
 
-3. title:  St Regis three bedroom, three bathroom condo
-sqft: 2025 price:  $16500 location:   (SOMA / south beach)
+3. title:  Classic Home w/ GG Bridge Views! 4+Brm, 5.5 Ba Rarely Available
+sqft: 8900 price:  $25000 location:   (pacific heights) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-classic-home-gg-bridge/7071466962.html
 
-4. title:  Classic Unit
-sqft: 1834 price:  $3500 location:   (Venice)
+4. title:  Set the Stage at 2117 Broadway: Elevator Penthouse G/G View 2 Car Park
+sqft: 4000 price:  $16995 location:   (pacific heights) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-set-the-stage-at-2117/7072894841.html
 
-5. title:  Bike Friendly, Business Lounge, Outdoor Pool
-sqft: 1442 price:  $6500 location:   (downtown / civic / van ness)
-
-5. title:  Peaceful 3bd/2.5ba Remodelled Townhouse in Private Community
-sqft: 2062 price:  $5100 location:   (ingleside / SFSU / CCSF)
+5. title:  Clay Jones Penthouse 2 Floors | Doorman | Sky Terrace | Office | 2 Car
+sqft: 3897 price:  $29500 location:   (nob hill) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-clay-jones-penthouse-2/7073446304.html

@@ -22,8 +22,9 @@ def run():
           section_ranked= rank_sqft(sqft_urls)
           for j in range(len(section_ranked)):
              ranked.append(section_ranked[j])
-            
-          if i < 1:
+
+          #check for all pages at home  
+          if i < 2:
               url= next_page(url)
           else: 
              break
@@ -35,7 +36,7 @@ def run():
     #info of sqft apartments w/o pictures and urls 
     apts, urls=info_of_apts(final_ranks)
       
-    print(apts)  
+    
     #pictures 
     
     #printed out info
@@ -44,11 +45,13 @@ def run():
     for i in range(len(apts)):
         storage_file.write("\n")
         storage_file.write(str(i+1)+". ")
-        storage_file.write("title:  "+ str(apts[i][1]).encode("utf-8"))
+        storage_file.write(("title:  "+ str(apts[i][1])).encode("utf-8").decode("utf-8"))
         storage_file.write("\n")
-        storage_file.write("sqft: " + str(apts[i][3]).encode("utf-8"))
-        storage_file.write(" price:  "+str(apts[i][0]).encode("utf-8"))
-        storage_file.write(" location:  "+ str(apts[i][2]).encode("utf-8"))
+        storage_file.write("sqft: " + str(apts[i][3]))
+        storage_file.write(" price:  "+str(apts[i][0]))
+        storage_file.write(" location:  "+ str(apts[i][2]))
+        storage_file.write(" url:  "+ str(urls[i]))
+
         #can add url of the apt
         #storage.file() ...
         storage_file.write("\n")
@@ -128,13 +131,14 @@ def info_of_apts(final_ranks):
        spans_price= soup.findAll('span',{'class':'price'})
        spans_title= soup.findAll('span',{'id':'titletextonly'})
        spans_location= soup.findAll('small')
-       if len(spans_price) != 0 and len(spans_price) != 0 and len(spans_location) != 0 :
+       if len(spans_price) != 0 and len(spans_price) != 0 and len(spans_location) != 0:
         price=str(spans_price[0].text)
         title=str(spans_title[0].text)
         location=str(spans_location[0].text)
         sqft= final_ranks[i][0]
-        apts_5.append([price,title,location,sqft])
-        pic_urls.append(final_ranks[i][1])
+        if sqft < 10000:
+           apts_5.append([price,title,location,sqft])
+           pic_urls.append(final_ranks[i][1])
        else: 
          continue
          
