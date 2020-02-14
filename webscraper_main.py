@@ -24,7 +24,7 @@ def run():
              ranked.append(section_ranked[j])
 
           #check for all pages at home  
-          if i < 2:
+          if i < 1:
               url= next_page(url)
           else: 
              break
@@ -49,7 +49,7 @@ def run():
         storage_file.write("\n")
         storage_file.write("sqft: " + str(apts[i][3]))
         storage_file.write(" price:  "+str(apts[i][0]))
-        storage_file.write(" location:  "+ str(apts[i][2]))
+        storage_file.write(" location: "+ str(apts[i][2]))
         storage_file.write(" url:  "+ str(urls[i]))
 
         #can add url of the apt

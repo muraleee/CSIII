@@ -1,15 +1,17 @@
 
-1. title:  2 Bedroom Condo at The Fairmont Ghirardelli Square
-sqft: 94109 price:  $5000 location:   (russian hill) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-2-bedroom-condo-at-the/7074265820.html
+1. title:  Premier Luxury 4 BD- New Const- Landscaped Yard- Parking- ReLISTO
+sqft: 2800 price:  $10995 location:  (noe valley) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-premier-luxury-4-bd-new/7075043493.html
 
-2. title:  One Bedroom and One bathroom in High Rise Bldg
-sqft: 21000 price:  $1950 location:   (sunset / parkside) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-one-bedroom-and-one/7070538450.html
+2. title:  Gracious Living..
+sqft: 2195 price:  $4500 location:  (San Francisco) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-gracious-living/7068025619.html
 
-3. title:  Classic Home w/ GG Bridge Views! 4+Brm, 5.5 Ba Rarely Available
-sqft: 8900 price:  $25000 location:   (pacific heights) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-classic-home-gg-bridge/7071466962.html
+3. title:  6 Bedroom 3 bath House Available Now!
+sqft: 2000 price:  $5650 location:  (bayview) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-6-bedroom-3-bath-house/7058811133.html
 
-4. title:  Set the Stage at 2117 Broadway: Elevator Penthouse G/G View 2 Car Park
-sqft: 4000 price:  $16995 location:   (pacific heights) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-set-the-stage-at-2117/7072894841.html
+4. title:  $2275 Unique Exclusive Pent House  SPACIOUS BED room and Deck View
+sqft: 2000 price:  $2275 location:  (excelsior / outer mission) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-2275-unique-exclusive/7067664722.html
 
-5. title:  Clay Jones Penthouse 2 Floors | Doorman | Sky Terrace | Office | 2 Car
-sqft: 3897 price:  $29500 location:   (nob hill) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-clay-jones-penthouse-2/7073446304.html
+5. title:  4 BEDS 4 BATHS BEAUTIFUL EXCEPTIONAL MERCED HEIGHTS HOME
+sqft: 1979 price:  $6850 location:  (San Francisco) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-4-beds-4-baths-beautiful/7060712590.html
+tml
+c/apa/d/san-francisco-clay-jones-penthouse-2/7073446304.html
