@@ -1,17 +1,15 @@
 
-1. title:  Premier Luxury 4 BD- New Const- Landscaped Yard- Parking- ReLISTO
-sqft: 2800 price:  $10995 location:  (noe valley) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-premier-luxury-4-bd-new/7075043493.html
+1. title:  Classic Home w/ GG Bridge Views! 4+Brm, 5.5 Ba Rarely Available
+sqft: 8900 price:  $25000 location:  (pacific heights) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-classic-home-gg-bridge/7071466962.html
 
-2. title:  Gracious Living..
-sqft: 2195 price:  $4500 location:  (San Francisco) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-gracious-living/7068025619.html
+2. title:  MANSION FOR LEASE
+sqft: 7800 price:  $10000 location:  (Redding) url:  https://sfbay.craigslist.org/sfc/apa/d/redding-mansion-for-lease/7071272957.html
 
-3. title:  6 Bedroom 3 bath House Available Now!
-sqft: 2000 price:  $5650 location:  (bayview) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-6-bedroom-3-bath-house/7058811133.html
+3. title:  Mid Century Marvel in Sherwood Forest w/ocean view!
+sqft: 4477 price:  $17000 location:  (west portal / forest hill) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-mid-century-marvel-in/7075512198.html
 
-4. title:  $2275 Unique Exclusive Pent House  SPACIOUS BED room and Deck View
-sqft: 2000 price:  $2275 location:  (excelsior / outer mission) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-2275-unique-exclusive/7067664722.html
+4. title:  Stunning Ocean View SFH Mt. Davidson Manor, Steps to St. Francis Wood!
+sqft: 3700 price:  $9500 location:  (ingleside / SFSU / CCSF) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-stunning-ocean-view-sfh/7074053090.html
 
-5. title:  4 BEDS 4 BATHS BEAUTIFUL EXCEPTIONAL MERCED HEIGHTS HOME
-sqft: 1979 price:  $6850 location:  (San Francisco) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-4-beds-4-baths-beautiful/7060712590.html
-tml
-c/apa/d/san-francisco-clay-jones-penthouse-2/7073446304.html
+5. title:  Bespoke Ultra Luxury | Heart of the Marina | Sprawling | Compass
+sqft: 3600 price:  $15995 location:  (San Francisco - Cow Hollow) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-bespoke-ultra-luxury/7065078422.html

@@ -24,7 +24,7 @@ def run():
              ranked.append(section_ranked[j])
 
           #check for all pages at home  
-          if i < 1:
+          if i < 23:
               url= next_page(url)
           else: 
              break
@@ -35,25 +35,26 @@ def run():
    
     #info of sqft apartments w/o pictures and urls 
     apts, urls=info_of_apts(final_ranks)
+
+
       
     
     #pictures 
     
     #printed out info
 
-    storage_file = open("apt_info.txt", "r+")
+    storage_file = open("apt_info.txt", "w+")
     for i in range(len(apts)):
         storage_file.write("\n")
         storage_file.write(str(i+1)+". ")
-        storage_file.write(("title:  "+ str(apts[i][1])).encode("utf-8").decode("utf-8"))
+        storage_file.write(("title:  " + str(apts[i][1])).encode("utf-8").decode("utf-8"))
         storage_file.write("\n")
         storage_file.write("sqft: " + str(apts[i][3]))
         storage_file.write(" price:  "+str(apts[i][0]))
         storage_file.write(" location: "+ str(apts[i][2]))
         storage_file.write(" url:  "+ str(urls[i]))
 
-        #can add url of the apt
-        #storage.file() ...
+
         storage_file.write("\n")
 
 
@@ -76,7 +77,7 @@ def souper(url):
     li_tags= soup.findAll('li',{'class':'result-row'})
     for i in range(len(li_tags)):
       for tag in li_tags[i].find_all('a'):
-           if s%3==0:
+           if s%3 == 0:
              housing_urls.append(tag.get('href',None))
            s+=1       
     
@@ -159,7 +160,7 @@ def repeat_check(sqft_urls):
         temp= re.findall('.+\/d/(.+)\/.+',url_st)
         if lists[0] == temp[0]:
            #print("check")
-           removing.append([sqft_urls[j][0],sqft_urls[j][1]])
+           removing.append([sqft_urls[j][0], sqft_urls[j][1]])
 
      for counter in range(len(removing)):
         no_repeats.remove(removing[counter])
