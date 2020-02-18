@@ -1,15 +1,15 @@
 
-1. title:  Classic Home w/ GG Bridge Views! 4+Brm, 5.5 Ba Rarely Available
-sqft: 8900 price:  $25000 location:  (pacific heights) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-classic-home-gg-bridge/7071466962.html
+1. title:  Clay Jones Penthouse 2 Floors | Doorman | Sky Terrace | Office | 2 Car
+sqft: 3897 price:  $29500 location:  (nob hill) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-clay-jones-penthouse-2/7073446304.html
 
-2. title:  MANSION FOR LEASE
-sqft: 7800 price:  $10000 location:  (Redding) url:  https://sfbay.craigslist.org/sfc/apa/d/redding-mansion-for-lease/7071272957.html
-
-3. title:  Mid Century Marvel in Sherwood Forest w/ocean view!
-sqft: 4477 price:  $17000 location:  (west portal / forest hill) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-mid-century-marvel-in/7075512198.html
-
-4. title:  Stunning Ocean View SFH Mt. Davidson Manor, Steps to St. Francis Wood!
-sqft: 3700 price:  $9500 location:  (ingleside / SFSU / CCSF) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-stunning-ocean-view-sfh/7074053090.html
-
-5. title:  Bespoke Ultra Luxury | Heart of the Marina | Sprawling | Compass
+2. title:  Bespoke Ultra Luxury | Heart of the Marina | Sprawling | Compass
 sqft: 3600 price:  $15995 location:  (San Francisco - Cow Hollow) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-bespoke-ultra-luxury/7065078422.html
+
+3. title:  Built in 1892 | Golden Gate Bridge Views | Original Details | MUST SEE
+sqft: 3000 price:  $9000 location:  (pacific heights) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-built-in-golden-gate/7075578183.html
+
+4. title:  Premier Luxury 4 BD- New Const- Landscaped Yard- Parking- ReLISTO
+sqft: 2800 price:  $10995 location:  (noe valley) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-premier-luxury-4-bd-new/7075043493.html
+
+5. title:  Elegant detached home in prime Forest Hill with  2 car garage+ laundry
+sqft: 2610 price:  $5500 location:  (west portal / forest hill) url:  https://sfbay.craigslist.org/sfc/apa/d/san-francisco-elegant-detached-home-in/7065515160.html

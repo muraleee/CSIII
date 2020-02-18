@@ -24,7 +24,7 @@ def run():
              ranked.append(section_ranked[j])
 
           #check for all pages at home  
-          if i < 23:
+          if i < 2:
               url= next_page(url)
           else: 
              break
@@ -40,7 +40,8 @@ def run():
       
     
     #pictures 
-    
+    pic_pairs= pic_return(urls)
+    dwnloaded_pics(pic_pairs)
     #printed out info
 
     storage_file = open("apt_info.txt", "w+")
@@ -182,8 +183,49 @@ def next_page(url):
 
 
 
-#method is supposed to download pictures
+#this method should give 2 pic_urls to later be downloaded
 def pic_return(urls):
-     return 0
-run()
+      
+    pic_pairs= []  
+    pic_urls=[]
 
+    for i in range(len(urls)):
+          r= requests.get(urls[i])
+          #is the literal picture urls, supposed to have 2 of them 
+          soup = BeautifulSoup(r.text, 'html.parser')
+          div_tags= soup.findAll('div',{'id':'thumbs'})
+          s=0
+          for i in range(len(div_tags)):
+           for tag in div_tags[i].find_all('a'):
+               if s < 2:
+                pic_urls.append(tag.get('href',None))
+                s+=1
+                
+          pic_pairs.append([pic_urls[len(pic_urls)-2],pic_urls[len(pic_urls)-1]])     
+
+           
+    return pic_pairs
+
+
+def dwnloaded_pics(pic_pairs):
+  
+
+ for i in range(len(pic_pairs)):
+  for j in range(len(pic_pairs[i])):
+     with open('apt'+ str(i+1)+'-'+str(j+1) +'.jpg', 'wb') as handle:
+      r = requests.get(pic_pairs[i][j], stream=True)
+      print("attempting download...")
+      if not r.ok:
+          print(r)
+
+      for block in r.iter_content(1024):
+          if not block:
+               break
+
+          handle.write(block)
+     print(handle)
+ return 0
+
+
+
+run()
