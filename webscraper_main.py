@@ -24,7 +24,7 @@ def run():
              ranked.append(section_ranked[j])
 
           #check for all pages at home  
-          if i < 2:
+          if i < 23:
               url= next_page(url)
           else: 
              break
@@ -127,7 +127,7 @@ def info_of_apts(final_ranks):
   sqft=""
   pic_urls=[]
   for i in range(len(final_ranks)):
-     if i < 5:
+     if i < 6:
        r= requests.get(final_ranks[i][1])
        soup = BeautifulSoup(r.text, 'html.parser')
        spans_price= soup.findAll('span',{'class':'price'})
